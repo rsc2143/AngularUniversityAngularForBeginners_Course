@@ -1,0 +1,136 @@
+Install latest node version from https://nodejs.org/en/, not the LTS or Long Term Support version
+
+
+Then install angular cli using following command
+
+### Terminal command below ###
+
+(base) rohit@Rohits-MacBook-Air 02_CourseKickOffDevelopmentEnvironmentSetup % sudo npm install -g @angular/cli 
+Password:
+
+### Terminal command ends ###
+
+
+Once the installation is complete, we have the global angular cli called ng which is the angular cli itself. We can check for ng version by simply typing ng in terminal
+
+### Terminal command below ###
+
+(base) rohit@Rohits-MacBook-Air 02_CourseKickOffDevelopmentEnvironmentSetup % ng
+Node.js version v17.3.0 detected.
+Odd numbered Node.js versions will not enter LTS status and should not be used for production. For more information, please see https://nodejs.org/en/about/releases/.
+Available Commands:
+  add Adds support for an external library to your project.
+  analytics Configures the gathering of Angular CLI usage metrics. See https://angular.io/cli/usage-analytics-gathering.
+  build (b) Compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory.
+  deploy Invokes the deploy builder for a specified project or for the default project in the workspace.
+  config Retrieves or sets Angular configuration values in the angular.json file for the workspace.
+  doc (d) Opens the official Angular documentation (angular.io) in a browser, and searches for a given keyword.
+  e2e (e) Builds and serves an Angular app, then runs end-to-end tests.
+  extract-i18n (i18n-extract, xi18n) Extracts i18n messages from source code.
+  generate (g) Generates and/or modifies files based on a schematic.
+  help Lists available commands and their short descriptions.
+  lint (l) Runs linting tools on Angular app code in a given project folder.
+  new (n) Creates a new workspace and an initial Angular application.
+  run Runs an Architect target with an optional custom builder configuration defined in your project.
+  serve (s) Builds and serves your app, rebuilding on file changes.
+  test (t) Runs unit tests in a project.
+  update Updates your application and its dependencies. See https://update.angular.io/
+  version (v) Outputs Angular CLI version.
+
+For more detailed help run "ng [command name] --help"
+
+### Terminal command ends ###
+
+We can generate a new angular application using the 'ng new' command and we can run the application itself using the 'ng server' command
+
+First we run the 'ng new' command along with giving a folder name for the application we are building (let the application name be 02_Angular_Course). So once we run 'ng new 02_Angular_Course' command, we get a question related to Angular routing, which we give an input No, and we choose plain CSS as our styling. Then our application gets scaffolded and our dependencies are installed. The cli creates a series of files in our filesystem and also installs a series of npm dependencies. The command is as follows along with the output:
+
+### Terminal command below ###
+
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? CSS
+CREATE 02_Angular_Course/README.md (1061 bytes)
+CREATE 02_Angular_Course/.editorconfig (274 bytes)
+CREATE 02_Angular_Course/.gitignore (620 bytes)
+CREATE 02_Angular_Course/angular.json (3105 bytes)
+CREATE 02_Angular_Course/package.json (1081 bytes)
+CREATE 02_Angular_Course/tsconfig.json (863 bytes)
+CREATE 02_Angular_Course/.browserslistrc (600 bytes)
+CREATE 02_Angular_Course/karma.conf.js (1434 bytes)
+CREATE 02_Angular_Course/tsconfig.app.json (287 bytes)
+CREATE 02_Angular_Course/tsconfig.spec.json (333 bytes)
+CREATE 02_Angular_Course/.vscode/extensions.json (130 bytes)
+CREATE 02_Angular_Course/.vscode/launch.json (474 bytes)
+CREATE 02_Angular_Course/.vscode/tasks.json (938 bytes)
+CREATE 02_Angular_Course/src/favicon.ico (948 bytes)
+CREATE 02_Angular_Course/src/index.html (301 bytes)
+CREATE 02_Angular_Course/src/main.ts (372 bytes)
+CREATE 02_Angular_Course/src/polyfills.ts (2338 bytes)
+CREATE 02_Angular_Course/src/styles.css (80 bytes)
+CREATE 02_Angular_Course/src/test.ts (745 bytes)
+CREATE 02_Angular_Course/src/assets/.gitkeep (0 bytes)
+CREATE 02_Angular_Course/src/environments/environment.prod.ts (51 bytes)
+CREATE 02_Angular_Course/src/environments/environment.ts (658 bytes)
+CREATE 02_Angular_Course/src/app/app.module.ts (314 bytes)
+CREATE 02_Angular_Course/src/app/app.component.css (0 bytes)
+CREATE 02_Angular_Course/src/app/app.component.html (23332 bytes)
+CREATE 02_Angular_Course/src/app/app.component.spec.ts (989 bytes)
+CREATE 02_Angular_Course/src/app/app.component.ts (221 bytes)
+✔ Packages installed successfully.
+    Directory is already under version control. Skipping initialization of git.
+
+
+### Terminal command ends ###
+
+We can see the file tree structure as follows to see which files are present
+
+### Terminal command below ###
+
+(base) rohit@Rohits-MacBook-Air 02_Angular_Course % tree -I 'node_modules'
+.
+├── README.md
+├── angular.json
+├── karma.conf.js
+├── package-lock.json
+├── package.json
+├── src
+│   ├── app
+│   │   ├── app.component.css
+│   │   ├── app.component.html
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   └── app.module.ts
+│   ├── assets
+│   ├── environments
+│   │   ├── environment.prod.ts
+│   │   └── environment.ts
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   ├── polyfills.ts
+│   ├── styles.css
+│   └── test.ts
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json
+
+### Terminal command ends ###
+
+Note that I skipped the directory of node_modules as it has a plethora of node modules, just like virtual environment folder in python
+
+We can now spin up a small development server using 'ng start' as follows (Note that the web server will be served on http://localhost:4200 as port 4200 is the port of angular:
+
+### Terminal command below ###
+
+(base) rohit@Rohits-MacBook-Air 02_Angular_Course % npm start
+
+> 02-angular-course@0.0.0 start
+> ng serve
+
+Node.js version v17.3.0 detected.
+Odd numbered Node.js versions will not enter LTS status and should not be used for production. For more information, please see https://nodejs.org/en/about/releases/.
+
+
+### Terminal command ends ###
+
+Internall 'npm start' will use the 'ng serve' command.
